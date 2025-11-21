@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import { SlideFade } from '@chakra-ui/react';
 import { MotionBox } from './motion';
+import type { EasingDefinition, Variants } from 'framer-motion';
 
 const staggerVariants = {
   initial: {
@@ -36,7 +37,7 @@ const variants = {
   }
 };
 
-export const easing = [0.6, -0.05, 0.01, 0.99];
+export const easing: EasingDefinition = [0.6, -0.05, 0.01, 0.99];
 
 export const stagger = {
   animate: {
@@ -46,7 +47,7 @@ export const stagger = {
   }
 };
 
-export const fadeInUp = {
+export const fadeInUp: Variants = {
   initial: {
     y: 60,
     opacity: 0,
