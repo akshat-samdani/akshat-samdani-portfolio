@@ -2,8 +2,8 @@
  * LINKS and USERNAMES
  */
 export const GITHUB_API_URL = 'https://api.github.com';
-export const GITHUB_USERNAME = 'akshat202002';
-export const GITHUB_REPO = 'myportfolio';
+export const GITHUB_USERNAME = 'akshat-samdani';
+export const GITHUB_REPO = 'akshat-samdani-portfolio';
 // TODO: add repo name
 export const DEVTO_API_URL = 'https://dev.to/api';
 

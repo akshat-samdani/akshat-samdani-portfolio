@@ -6,7 +6,7 @@ import { PageSlideFade } from '../shared/animations/page-transitions';
 import RepositoryCard from './live-data-card';
 import StackGrid from 'react-stack-grid';
 import CardSkeleton from './card-skeleton';
-import { GITHUB_API_URL } from 'data/constants';
+import { GITHUB_API_URL, GITHUB_USERNAME } from 'data/constants';
 
 const LiveData = () => {
   const { get, loading } = useFetch(GITHUB_API_URL);
@@ -26,10 +26,22 @@ const LiveData = () => {
   }
 
   useEffect(() => {
-    get('/users/MA-Ahmad/repos').then((res) => {
-      setRepos(res?.sort((a, b) => b.stargazers_count - a.stargazers_count).slice(0, 8));
-    });
-  }, []);
+    const fetchRepos = async () => {
+      try {
+        const response = await get(`/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated`);
+        if (Array.isArray(response)) {
+          const sorted = response.sort((a, b) => b.stargazers_count - a.stargazers_count).slice(0, 8);
+          setRepos(sorted);
+        } else {
+          setRepos([]);
+        }
+      } catch {
+        setRepos([]);
+      }
+    };
+
+    fetchRepos();
+  }, [get]);
 
   return (
     <PageSlideFade>
