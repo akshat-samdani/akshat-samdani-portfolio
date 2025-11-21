@@ -7,7 +7,7 @@ const siteConfig = {
     name: "Akshat Samdani",
     accounts: [
       {
-        url: "https://github.com/Akshat202002/",
+        url: "https://github.com/akshat-samdani/",
         label: "Github Account",
         type: "gray",
         icon: <FaGithub />

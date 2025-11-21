@@ -101,7 +101,7 @@ const Achievements = () => {
               Framer-motion,{' '}
               <ExternalLink
                 color={linkColor}
-                url="https://github.com/Akshat202002/"
+                url="https://github.com/akshat-samdani/"
                 text={'source on Github'}
                 target="_blank"
               />
@@ -119,7 +119,7 @@ const Achievements = () => {
               Published or contributed to{' '}
               <ExternalLink
                 color={linkColor}
-                url="https://github.com/Akshat202002/tab=repositories"
+                url="https://github.com/akshat-samdani/tab=repositories"
                 text={'32 open-source repositories'}
                 target="_blank"
               />
@@ -137,7 +137,7 @@ const Achievements = () => {
               Built my portfolio website with React and ChakraUI,{' '}
               <ExternalLink
                 color={linkColor}
-                url="https://github.com/Akshat202002/" // TODO: Add link to repo
+                url="https://github.com/akshat-samdani/"
                 text={'source on Github'}
                 target="_blank"
               />

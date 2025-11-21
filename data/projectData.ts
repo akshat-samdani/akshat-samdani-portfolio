@@ -12,7 +12,7 @@ export const projectsList = [
     title: 'GlideEZ',
     imageLight: '/assets/images/projects/cover/glideez.png',
     blurHash: 'L4ADc400P*Zi4Tu1y;Qo00pH#YXl',
-    site: 'https://github.com/Akshat202002/Glide-Ez_New',
+    site: 'https://github.com/akshat-samdani/Glide-Ez_New',
     description:
       'GlideEz is all in one platform for hassle free Flight Booking.',
     techStack: ['Django', 'MySQL']
