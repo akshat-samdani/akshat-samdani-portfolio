@@ -81,7 +81,6 @@ const Achievements = () => {
                 target="_blank"
               />
             </TimelineItem>
-            <TimelineItem icon={FiUsers}>Became a dad ❤️</TimelineItem>
             <TimelineItem icon={FiPackage}>
               Published 3 posts on my portfolio website{' '}
               <InternalLink color={linkColor} url="/blog" text={'Blog'} />
