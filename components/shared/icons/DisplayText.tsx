@@ -6,7 +6,7 @@ interface DisplayTextProps {
   value: number
 }
 
-const DisplayText: React.SFC<DisplayTextProps> = ({ isLoading, value }) => {
+const DisplayText: React.FC<DisplayTextProps> = ({ isLoading, value }) => {
   const linkColor = useLinkColor()
   const textColor = useColorModeValue('gray.500', 'gray.200')
 

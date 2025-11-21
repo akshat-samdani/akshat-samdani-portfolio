@@ -24,7 +24,7 @@ interface IProps {
   postDbLikes: number
 }
 
-const PostCard: React.SFC<IProps> = ({ post, isLoading, postDbLikes }) => {
+const PostCard: React.FC<IProps> = ({ post, isLoading, postDbLikes }) => {
   const linkColor = useLinkColor()
   const textColor = useColorModeValue('gray.500', 'gray.200')
   const devIcon = useColorModeValue(

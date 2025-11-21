@@ -78,7 +78,7 @@ export interface CarouselProps {
   images: string[];
 }
 
-const Carousel: React.SFC<CarouselProps> = ({ images }) => {
+const Carousel: React.FC<CarouselProps> = ({ images }) => {
   const [[page, direction], setPage] = React.useState([0, 0]);
   const [imageIndex, setImageIndex] = React.useState<number>(0);
 
