@@ -87,7 +87,7 @@ const PopularArticles: React.FC<BlogPostProps> = (props) => {
                     >
                       <HStack justifyContent="space-between" isInline>
                         <Heading fontSize="lg" textAlign="left" mt={0}>
-                          <NextLink href={`/blog/${slug}`} passHref>
+                          <NextLink href={`/blog/${slug}`} passHref legacyBehavior>
                             <Text as={Link} color={linkColor}>
                               {title}
                             </Text>
@@ -190,7 +190,7 @@ const PopularArticles: React.FC<BlogPostProps> = (props) => {
             )}
       </SimpleGrid>
       <HStack justifyContent="center" width="100%">
-        <NextLink href="/blog" passHref>
+        <NextLink href="/blog" passHref legacyBehavior>
           <HStack spacing={2} as={Link} color={linkColor}>
             <Text fontSize="sm">More Articles</Text>
             <Box height="1.2rem" width="1.2rem">

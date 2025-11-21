@@ -62,7 +62,7 @@ const PostCard: React.SFC<IProps> = ({ post, isLoading, postDbLikes }) => {
 
         <HStack justifyContent="space-between" isInline>
           <Heading fontSize="lg" textAlign="left" mt={0}>
-            <NextLink href={`/blog/${post.slug}`} passHref>
+            <NextLink href={`/blog/${post.slug}`} passHref legacyBehavior>
               <Text as={Link} color={linkColor}>
                 {post.title}
               </Text>

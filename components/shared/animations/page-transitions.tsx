@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { ReactNode } from 'react';
 import { SlideFade } from '@chakra-ui/react';
 import { MotionBox } from './motion';

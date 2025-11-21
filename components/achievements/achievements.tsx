@@ -1,11 +1,5 @@
 import * as React from 'react'
-import {
-  FiPackage,
-  FiHome,
-  FiEdit2,
-  FiUsers,
-  FiBarChart2,
-} from 'react-icons/fi'
+import { FiPackage, FiHome, FiEdit2, FiBarChart2 } from 'react-icons/fi'
 import { FaTools } from 'react-icons/fa'
 import { VStack, Heading, Box, Link, LinkProps } from '@chakra-ui/react'
 import { TimelineItem } from './Timeline'
@@ -27,7 +21,7 @@ const ExternalLink: React.FC<ExternalLinkProps> = ({
   ...props
 }) => {
   return (
-    <NextLink href={url} passHref>
+    <NextLink href={url} passHref legacyBehavior>
       <Link {...linkProps} {...props}>
         {text}
       </Link>
@@ -42,7 +36,7 @@ const InternalLink: React.FC<ExternalLinkProps> = ({
   ...props
 }) => {
   return (
-    <NextLink href={url} passHref>
+    <NextLink href={url} passHref legacyBehavior>
       <Link {...linkProps} {...props}>
         {text}
       </Link>

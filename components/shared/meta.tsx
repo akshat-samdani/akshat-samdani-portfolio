@@ -8,7 +8,16 @@ type Props = {
   image?: string;
 };
 
-const Meta = ({ title, keywords, description, image }: Props): JSX.Element => {
+const defaultTitle = 'Akshat Samdani - Full Stack Developer';
+const defaultKeywords = 'web development, programming, web design, react js, chakra ui';
+const defaultDescription = 'Software Engineer. Lover of web and opensource.';
+
+const Meta = ({
+  title = defaultTitle,
+  keywords = defaultKeywords,
+  description = defaultDescription,
+  image = SEO_IMAGE
+}: Props): JSX.Element => {
   return (
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -26,13 +35,6 @@ const Meta = ({ title, keywords, description, image }: Props): JSX.Element => {
       <title>{title.includes('Akshat') ? title : title.concat(' | Akshat Samdani')}</title>
     </Head>
   );
-};
-
-Meta.defaultProps = {
-  title: 'Akshat Samdani - Full Stack Developer',
-  keywords: 'web development, programming, web design, react js, chakra ui',
-  description: 'Software Engineer. Lover of web and opensource.',
-  image: SEO_IMAGE
 };
 
 export default Meta;

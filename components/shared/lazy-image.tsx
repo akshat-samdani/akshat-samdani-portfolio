@@ -1,7 +1,6 @@
 import * as React from 'react';
-import ProgressiveImage from 'react-progressive-image';
 import { BlurhashCanvas } from 'react-blurhash';
-import { Image } from '@chakra-ui/react';
+import { Box, Image } from '@chakra-ui/react';
 
 type LazyImageProps = {
   src: string;
@@ -16,33 +15,36 @@ type LazyImageProps = {
 const LazyImage = (props: LazyImageProps) => {
   const { src, blurHash, width, height, rounded } = props;
   const placeholder = '/assets/images/placeholder.png';
+  const [isLoaded, setIsLoaded] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsLoaded(false);
+  }, [src]);
 
   return (
-    <ProgressiveImage delay={500} src={src} placeholder={placeholder}>
-      {(src, loading) => {
-        return loading ? (
-          <BlurhashCanvas
-            hash={blurHash}
-            width={width}
-            height={height}
-            punch={1}
-            style={{ borderRadius: rounded ? '5px' : '' }}
-          />
-        ) : (
-          <Image
-            src={src}
-            objectFit="cover"
-            alt="cover image"
-            width={width}
-            height={height}
-            // size={size}
-            // layout={layout}
-            rounded={rounded}
-            fallbackSrc={placeholder}
-          />
-        );
-      }}
-    </ProgressiveImage>
+    <Box position="relative" width={width} height={height}>
+      {!isLoaded && (
+        <BlurhashCanvas
+          hash={blurHash}
+          width={width}
+          height={height}
+          punch={1}
+          style={{ borderRadius: rounded ? '5px' : '' }}
+        />
+      )}
+      <Image
+        src={src}
+        objectFit="cover"
+        alt="cover image"
+        width={width}
+        height={height}
+        rounded={rounded}
+        fallbackSrc={placeholder}
+        onLoad={() => setIsLoaded(true)}
+        onError={() => setIsLoaded(true)}
+        display={isLoaded ? 'block' : 'none'}
+      />
+    </Box>
   );
 };
 

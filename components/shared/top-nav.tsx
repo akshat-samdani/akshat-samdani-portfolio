@@ -68,7 +68,7 @@ const NavLink = (props: NavLinkProps) => {
   };
 
   return (
-    <NextLink href={props.path} passHref>
+    <NextLink href={props.path} passHref legacyBehavior>
       <Link
         px={3}
         py={1}
@@ -108,7 +108,7 @@ const MenuLink = (props: MenuLinkProps) => {
   };
 
   return (
-    <NextLink href={props.path} passHref>
+    <NextLink href={props.path} passHref legacyBehavior>
       <Link onClick={() => props.onClose()}>
         <MenuItem
           color={props.rPath === props.path && props.color}
@@ -165,7 +165,7 @@ export default function TopNav() {
           />
           <HStack spacing={8} alignItems={'center'}>
             <MotionBox whileHover={{ scale: 1.2 }} shadow="md" rounded="full">
-              <NextLink href={'/'} passHref>
+              <NextLink href={'/'} passHref legacyBehavior>
                 <Avatar
                   as={Link}
                   size={'sm'}

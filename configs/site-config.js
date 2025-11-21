@@ -1,10 +1,4 @@
-import {
-  FaGithub,
-  FaDev,
-  FaLinkedin,
-  FaQuora,
-  FaTwitter
-} from "react-icons/fa";
+import { FaGithub, FaDev, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 
 const siteConfig = {

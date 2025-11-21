@@ -36,7 +36,11 @@ const RepositoriesList = ({ repositories }) => {
   })
 
   const handleClick = (type) => {
-    activeTab === 'live' ? play({ id: 'on' }) : play({ id: 'off' })
+    if (activeTab === 'live') {
+      play({ id: 'on' })
+    } else {
+      play({ id: 'off' })
+    }
     setActiveTab(type)
   }
 

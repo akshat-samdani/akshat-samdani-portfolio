@@ -18,7 +18,11 @@ export const ColorModeSwitcher: React.FC<ColorModeSwitcherProps> = () => {
   });
 
   const handleClick = () => {
-    mode === 'dark' ? play({ id: 'on' }) : play({ id: 'off' });
+    if (mode === 'dark') {
+      play({ id: 'on' });
+    } else {
+      play({ id: 'off' });
+    }
     toggleColorMode();
   };
 

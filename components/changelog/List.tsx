@@ -21,7 +21,7 @@ import moment from 'moment';
 import { Tag } from 'components/shared/Tags';
 import { AiFillCheckCircle } from 'react-icons/ai';
 import { GoIssueReopened } from 'react-icons/go';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLinkColor } from 'components/theme';
 
@@ -62,7 +62,7 @@ const PrList = ({ prList }) => {
                       ) : (
                         <ListIcon as={GoIssueReopened} color="gray.500" />
                       )}
-                      <NextLink href={pr.html_url} passHref>
+                      <NextLink href={pr.html_url} passHref legacyBehavior>
                         <Text as={Link} color={linkColor} target="_blank">
                           {pr.title}
                         </Text>
@@ -87,7 +87,7 @@ const PrList = ({ prList }) => {
                       </HStack>
                     </HStack>
                     <Box ml={6} mt={2} className="article">
-                      {pr.body && <UnorderedList>{ReactHtmlParser(pr.body_html)}</UnorderedList>}
+                      {pr.body && <UnorderedList>{parse(pr.body_html)}</UnorderedList>}
                     </Box>
                   </CardTransition>
                 </MotionBox>

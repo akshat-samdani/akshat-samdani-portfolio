@@ -29,14 +29,31 @@ export const getAllBlogArticles = async (): Promise<IArticle[]> => {
   return articles.filter(blogFilter);
 };
 
+type DevtoArticleResponse = {
+  id: number;
+  title: string;
+  description: string;
+  published_at: string;
+  slug: string;
+  path: string;
+  url: string;
+  comments_count: number;
+  public_reactions_count: number;
+  positive_reactions_count: number;
+  cover_image: string;
+  tag_list: string[];
+  canonical_url: string;
+  collection_id?: number | null;
+  body_markdown: string;
+};
+
 // Takes a URL and returns the relative slug to your website
 export const convertCanonicalURLToRelative = (canonical: string): string => {
   return canonical.replace(blogURL, "");
 };
 
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/no-explicit-any
-const convertDevtoResponseToArticle = (data: any): IArticle => {
+const convertDevtoResponseToArticle = (data: DevtoArticleResponse): IArticle => {
   const slug = convertCanonicalURLToRelative(data.canonical_url);
   const markdown = sanitizeDevToMarkdown(data.body_markdown);
   const html = convertMarkdownToHtml(markdown);
